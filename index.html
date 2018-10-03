@@ -7,15 +7,16 @@
   </head>
   <body>
     <h1>Please help me choose between:</h1>
-    <div  class="InputSection">
-      <dic class="inputs">
-      <div>
-        <input> placeholder="Something to choose"</input>
+    <div  class="inputSection">
+      <div class="inputs">
+              <input placeholder="Something to choose"</input>
       </div>
-      <button class="addoption">Add</button>
+      <button class="addOption">Add</button>
     </div>
-    <button>Go!</button>
-	<p><button accesskey="a">Button with <u>A</u>ccesskey</button></p>
+<div class="resultSection"> </div>
+        <button>Go!</button>
+</body>
+    	<p><button accesskey="a">Button with <u>A</u>ccesskey</button></p>
 
     <p align="center" > <input name="submit"  class="submit" id="searchsubmit" type="submit" value="Choose"> </p>
          <p align="center"> <input name="s" class="field" id="s" type="text" placeholder="Porridge">
@@ -37,6 +38,34 @@
             >
          </p>
 
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+	</script>
+         <script>
+         $(function() {
+           $('.resultSection').hide()
+           var add_option = function(){
+             $('.inputs').append('<input></input>')
+           }
+           $('.addOption').click(add_option)
+         })
+         </script>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("h1").on({
+        mouseenter: function(){
+            $(this).css("background-color", "red");
+        },
+        mouseleave: function(){
+            $(this).css("background-color", "orange");
+        },
+        click: function(){
+            $(this).css("background-color", "grey");
+        }
+    });
+});
+</script>
   </body>
 </html>
