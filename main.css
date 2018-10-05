@@ -5,7 +5,6 @@ body     {
   align-items: center;
   margin-top: 150px;
   background-color: yellow;
-
 }
 
 h1 {
@@ -15,12 +14,7 @@ h1 {
    margin-bottom: 0px;
 }
 
-button {
-  background-color: yellow;
-  box-shadow: green;
-  }
-
-  .InputSection {
+  .inputSection {
     margin 50px 0px 80px 0px;
     width 400px;
   }
@@ -34,6 +28,14 @@ button {
   input {
   margin-top: 10px;
   }
-  .addoption {
+
+  .addOption {
     margin-top: 10px;
+  }
+  .resultSection {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
   }
