@@ -9,63 +9,34 @@
     <h1>Please help me choose between:</h1>
     <div  class="inputSection">
       <div class="inputs">
-              <input placeholder="Something to choose"</input>
+        <input placeholder="Something"></input>
       </div>
       <button class="addOption">Add</button>
     </div>
-<div class="resultSection"> </div>
-        <button>Go!</button>
-</body>
-    	<p><button accesskey="a">Button with <u>A</u>ccesskey</button></p>
+ <div class="resultSection"></div>
+        <button class="submit">Go!</button>
 
-    <p align="center" > <input name="submit"  class="submit" id="searchsubmit" type="submit" value="Choose"> </p>
-         <p align="center"> <input name="s" class="field" id="s" type="text" placeholder="Porridge">
-         <p align="center"><input type="radio" name="like" value="yes" checked /> Yes
-         <input type="radio" name="like" value="no"/> No </p>
-         <p align="center"> <input name="s" class="field" id="s" type="text" placeholder="Yoghurt">
-           <p align="center"><input type="radio" name="like" value="yes" checked /> Yes
-           <input type="radio" name="like" value="no"/> No </p>
-        <p align="center"> <input class="js-search-input search-input" placeholder="Fruit" tabindex="1" type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-          <p align="center"><input type="radio" name="like" value="yes" checked /> Yes
-          <input type="radio" name="like" value="no"/> No </p>
-
-         <p align="center"> <input class="js-search-input search-input" placeholder="Sandwich" tabindex="1" type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">  </p>
-
-           <p align="center"><input type="radio" name="like" value="yes" checked /> Yes
-           <input type="radio" name="like" value="no"/> No </p>
-           <p align='center'> <button type="reset">&Aring;terst&auml;ll </button>
-         <p align="center"> <img src="20141027_105233.jpg" alt="God frukost i Dublin" style="transform:rotate(180deg)" width="200" height="200"
-            >
-         </p>
-
-         <script src="https://code.jquery.com/jquery-3.3.1.min.js">
-	</script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
          <script>
          $(function() {
            $('.resultSection').hide()
-           var add_option = function(){
+           var add_option = function()  {
              $('.inputs').append('<input></input>')
            }
            $('.addOption').click(add_option)
+           var options = []
+           var submit = function () {
+             $('.inputSection').hide()
+             $('.resultSection').css('display', 'flex')
+             $('input').each(function() {
+               options.push($(this).val())
+             })
+             var winner = options[Math.floor(Math.random() * options.length)]
+             console.log(winner)
+             $('.resultSection').text(winner)
+           }
+           $('.submit').click(submit)
          })
          </script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("h1").on({
-        mouseenter: function(){
-            $(this).css("background-color", "red");
-        },
-        mouseleave: function(){
-            $(this).css("background-color", "orange");
-        },
-        click: function(){
-            $(this).css("background-color", "grey");
-        }
-    });
-});
-</script>
   </body>
 </html>
